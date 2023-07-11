@@ -15,6 +15,9 @@
     </div>
     <div class="nav-right col-8 pull-right right-header p-0">
       <ul class="nav-menus">
+        <li class="language-nav" (click)="languageToggle()">
+          <app-languages></app-languages>
+        </li>
         <li>
           <div class="mode" (click)="layoutToggle()">
             <i class="fa fa-moon-o" *ngIf="!dark"></i>

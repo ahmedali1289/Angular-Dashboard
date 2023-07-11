@@ -13,17 +13,20 @@ export class AdminGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, 
       state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    // Guard for user is login or not
-    let user = JSON.parse(localStorage.getItem('user'));
+  
+    let user = localStorage.getItem('user');
     if (!user || user === null) {
+      console.log('co');
+      
       this.router.navigate(['/auth/login']);
       return true
     }
     else if (user) {
       if (!Object.keys(user).length) {
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['/dashboard/default']);
         return true
       }
+     
     }
     return true
   }

@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import * as feather from 'feather-icons';
 import { LayoutService } from '../../../services/layout.service';
 import { NavService } from '../../../services/nav.service';
 import { fadeInAnimation } from '../../../data/router-animation/router-animation';
@@ -21,9 +20,7 @@ export class ContentComponent implements OnInit, AfterViewInit {
   }
     
   ngAfterViewInit() {
-    setTimeout(() => {
-      feather.replace();
-    });
+    
   }
 
   public getRouterOutletState(outlet) {

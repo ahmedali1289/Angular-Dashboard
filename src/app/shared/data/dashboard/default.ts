@@ -1,5 +1,5 @@
 declare var require: any;
-let Knob = require('knob'); // browserify require
+let Knob = require('knob'); 
 
 let primary = localStorage.getItem('primary_color') || '#7366ff';
 let secondary = localStorage.getItem('secondary_color') || '#f73164';

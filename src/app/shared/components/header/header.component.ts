@@ -33,6 +33,9 @@ export class HeaderComponent implements OnInit {
     this.dark = !this.dark;
     this.layout.config.settings.layout_version = this.dark ? 'dark-only' : 'light';
   }
+  languageToggle() {
+    this.navServices.language = !this.navServices.language;
+  }
   toggleFullScreen() {
     this.navServices.fullScreen = !this.navServices.fullScreen;
     if (this.navServices.fullScreen) {

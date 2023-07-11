@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as feather from 'feather-icons';
 
 @Component({
   selector: 'app-feather-icons',
@@ -13,9 +12,7 @@ export class FeatherIconsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
-      feather.replace();
-    });
+    
   }
 
 }

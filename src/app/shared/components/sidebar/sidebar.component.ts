@@ -3,6 +3,8 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Menu, NavService } from '../../services/nav.service';
 import { LayoutService } from '../../services/layout.service';
 
+
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -13,6 +15,8 @@ export class SidebarComponent {
 
   public iconSidebar;
   public menuItems: Menu[];
+
+  public menuItem:{};
   public url: any;
   public fileurl: any;
 
@@ -24,8 +28,11 @@ export class SidebarComponent {
 
   constructor(private router: Router, public navServices: NavService,
     public layout: LayoutService) {
-    this.navServices.items.subscribe(menuItems => {
+    this.navServices.items.subscribe(menuItems => {    
       this.menuItems = menuItems;
+      this.menuItem=menuItems;
+      console.log(this.menuItem,'yer');
+      
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
           menuItems.filter(items => {

@@ -1,4 +1,3 @@
-import * as shape from 'd3-shape';
 
 // BarChart options
 export var barChartShowXAxis = true;
@@ -35,5 +34,3 @@ export var areaChartyAxisLabel = 'Population';
 export var areaChartcolorScheme = {
     domain: ["#007bff", "#ff9f40", "#ff5370"]
 }
-export var lineChartcurve = shape.curveStep;
-export var lineChartcurve1 = shape.curveLinear;

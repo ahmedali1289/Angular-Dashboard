@@ -1,21 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, ActivatedRoute } from "@angular/router";
-import { ContactService } from './contact.service';
+import { ActivatedRouteSnapshot, Resolve } from "@angular/router";
 
-@Injectable()
 export class EditUserResolver implements Resolve<any> {
 
-  constructor(public contectService: ContactService) { }
+  constructor() { }
 
   resolve(route: ActivatedRouteSnapshot) {
     return new Promise((resolve, reject) => {
       let userId = route.paramMap.get('id');
-      this.contectService.getUser(userId)
-        .subscribe(
-          data => {
-            resolve(data);
-          }
-        );
     })
   }
   

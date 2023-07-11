@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/firebase/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   public errorMessage: any;
 
-  constructor(public authService: AuthService, private fb: FormBuilder) {
+  constructor(public authService: AuthService, private fb: FormBuilder , private router:Router) {
       this.loginForm = this.fb.group({
         email: ['test@gmail.com', [Validators.required, Validators.email]],
         password: ['test123', Validators.required]
@@ -26,26 +26,13 @@ export class LoginComponent implements OnInit {
   showPassword() {
     this.show = !this.show;
   }
-  
-  // Login With Google
-  loginGoogle() {
-    this.authService.GoogleAuth();
-  }
-
-  // Login With Twitter
-  loginTwitter(): void {
-    this.authService.signInTwitter();
-  }
-
-  // Login With Facebook
-  loginFacebook() {
-    this.authService.signInFacebok();
-  }
-
   // Simple Login
   login() {
-    localStorage.setItem('user', 'res')
-    this.authService.SignIn(this.loginForm.value['email'], this.loginForm.value['password']);
+    let email1= this.loginForm.value['email']
+    let pass=this.loginForm.value['password']
+    localStorage.setItem('user',this.loginForm.value['email'])
+    this.authService.SignIn(email1, pass);
+  this.authService.SignIn(this.loginForm.value['email'],this.loginForm.value['password'])
   }
 
 }

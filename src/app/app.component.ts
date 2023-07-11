@@ -10,8 +10,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  // For Progressbar
   loaders = this.loader.progress$.pipe(
     delay(1000),
     withLatestFrom(this.loader.progress$),

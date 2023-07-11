@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NavService, Menu } from '../../../../services/nav.service';
+import { NavService } from '../../../../services/nav.service';
 
 @Component({
   selector: 'app-languages',
