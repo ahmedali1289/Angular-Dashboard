@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/firebase/auth.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,14 +13,18 @@ export class LoginComponent implements OnInit {
   public show: boolean = false;
   public loginForm: FormGroup;
   public errorMessage: any;
+  
 
-  constructor(public authService: AuthService, private fb: FormBuilder , private router:Router) {
-      this.loginForm = this.fb.group({
+  constructor(public authService: AuthService, private fb: FormBuilder , private router:Router ,
+    private toastr: ToastrService,
+
+    ) {
+      this.loginForm = this.fb.group({ 
         email: ['test@gmail.com', [Validators.required, Validators.email]],
         password: ['test123', Validators.required]
       });
+      
   }
-
   ngOnInit() {
   }
 
@@ -32,7 +37,10 @@ export class LoginComponent implements OnInit {
     let pass=this.loginForm.value['password']
     localStorage.setItem('user',this.loginForm.value['email'])
     this.authService.SignIn(email1, pass);
-  this.authService.SignIn(this.loginForm.value['email'],this.loginForm.value['password'])
+    this.authService.SignIn(this.loginForm.value['email'],this.loginForm.value['password'])
+    this.toastr.success('successfully logged in!');
+  // this.toaster.success('Alert');
+  // alert('hello')
   }
 
 }

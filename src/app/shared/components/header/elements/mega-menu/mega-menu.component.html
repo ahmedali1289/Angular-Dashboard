@@ -86,14 +86,14 @@
             </a>
             <!-- External Link -->
             <a href="{{ !childrenItem.type ? null : childrenItem.path }}"
-              *ngIf="childrenItem.type === 'extLink'" routerLinkActive="active"
+              *ngIf="childrenItem?.type === 'extLink'" routerLinkActive="active"
               [routerLinkActiveOptions]="{exact: true}">
               <app-feather-icons [icon]="childrenItem.icon"></app-feather-icons>
               <span>{{childrenItem.title}}</span>
             </a>
             <!-- External Tab Link -->
             <a href="{{ !childrenItem.type ? null : childrenItem.path }}" target="_blank"
-              *ngIf="childrenItem.type === 'extTabLink'">
+              *ngIf="childrenItem?.type === 'extTabLink'">
               <app-feather-icons [icon]="childrenItem.icon"></app-feather-icons>
               <span>{{childrenItem.title}}</span>
             </a>

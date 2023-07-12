@@ -15,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SecureInnerPagesGuard } from './shared/guard/SecureInnerPagesGuard.guard';
 import { AdminGuard } from './shared/guard/admin.guard';
 import { AuthService } from './shared/services/firebase/auth.service';
+import { ToastrModule } from 'ngx-toastr';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

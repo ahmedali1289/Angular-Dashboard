@@ -31,6 +31,7 @@
     "bootstrap": "^4.5.2",
     "font-awesome": "^4.7.0",
     "ngx-router-animations": "0.0.9",
+    "ngx-toastr": "^12.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "web-animations-js": "^2.3.2",
