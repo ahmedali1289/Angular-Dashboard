@@ -44,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoadingBarRouterModule,
     LoadingBarModule
   ],
-  providers: [AuthService, AdminGuard, SecureInnerPagesGuard, 
+  providers: [AuthService, AdminGuard, SecureInnerPagesGuard,
   ],
   bootstrap: [AppComponent]
 })

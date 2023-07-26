@@ -15,6 +15,7 @@ export class AuthService implements OnInit {
   public static logout: Subject<any> = new Subject<any>();
   public userData: any;
   public showLoader: boolean = false;
+
   constructor(
     public router: Router,
     public ngZone: NgZone,
@@ -22,10 +23,11 @@ export class AuthService implements OnInit {
   }
   ngOnInit(): void { }
   // sign in function
-  SignIn(email:any, password:any) {
+  SignIn(email:string, password:string) {
     console.log(email,password)
     this.router.navigate(['/dashboard/default']);
   }
+  
   get isLoggedIn(): boolean {
     console.log('here1');
     console.log('here');

@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseUrl:'https://buybestthemes.com/pos/api/'
+  baseUrl:'https://buybestthemes.com/mobile_app_api/nameThatfish/api'
   // firebase: {
   //   apiKey: "Your Api Key",
   //   authDomain: "Your Auth Domain",
